@@ -9,6 +9,7 @@
     }
   ],
   "require": {
+    "composer/installers": "~1.0",
     "wisquimas/funciones-basicas" : "dev-master"
   },
   "extra": {
