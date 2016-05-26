@@ -2,6 +2,7 @@
   "name": "wisquimas/wordpress-template",
   "description": "Plantilla inicial para Wordpress",
   "license": "MIT",
+  "type": "wordpress-theme",
   "repositories": [
     {
       "type": "composer",
