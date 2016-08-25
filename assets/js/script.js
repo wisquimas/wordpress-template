@@ -74,7 +74,7 @@ jQuery(document).ready(function(){
 		var recipiente	= $(recipiente);
 		/*SET AJAX: SINO NO FUNCIONAN LAS DEL ADMIN*/
 		data.ajax_gafa = true;
-		ajax_GF = $.post('../procesos/do_action.php',data).done(function(d){
+		ajax_GF = $.post(gafacore.plantilla+'/procesos/do_action.php',data).done(function(d){
 			var info = JSON.parse( d );
 			if( !info || !info.ok ){
 				alert( info.mensaje );
@@ -94,7 +94,7 @@ jQuery(document).ready(function(){
 		cargando();
 		/*SET AJAX: SINO NO FUNCIONAN LAS DEL ADMIN*/
 		data.ajax_gafa = true;
-		ajax_GF = $.post( '../procesos/do_action.php', data ).done(function(d){
+		ajax_GF = $.post( gafacore.plantilla+'/procesos/do_action.php', data ).done(function(d){
 			var info = JSON.parse( d );
 			if( !info || !info.ok ){
 				alert( info.mensaje );
