@@ -1,4 +1,4 @@
-<?php require_once('../../../../wp-load.php');
+<?php require_once('../../../wp/wp-load.php');
 
 $mensaje = new Mensajes();
 
@@ -21,4 +21,3 @@ if( function_exists( $funcion ) ){
 };
 
 $mensaje->imprimir( 'JSON', true );
-?>

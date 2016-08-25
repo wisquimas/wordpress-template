@@ -28,8 +28,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <?php require_once("assets/js/gafaCore.php"); ?>
-    <!--suppress HtmlUnknownTarget -->
-    <script src="<?php assets(); ?>/js/script.js"></script>
     <!-- Comienza WP Head -->
     <?php wp_head(); ?>
     <!-- Google Analytics -->

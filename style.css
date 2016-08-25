@@ -83,7 +83,7 @@ a:hover, [data-link]:hover, [data-accion]:hover {
 .gafa-mensaje, .gafa-error {
     position: fixed;
     top: -61px;
-    background: url("../../images/X2.png") no-repeat 2% 52% rgba(32, 32, 32, .9);
+    background: rgba(32, 32, 32, .9);
     min-height: 61px;
     z-index: 2147483647;
     line-height: 19px;
