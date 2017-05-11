@@ -6,21 +6,9 @@ if (isset($_POST['ajax_gafa'])) {
 /*CLASES*/
 require_once('classes/inicio.php');
 
-/*OPCIONES*/
-set_options_gafa();
-
-function set_options_gafa()
-{
-    /* EJEMPLO
-    $home				= get_last_post('opciones_home');
-
-    define('HOME',		$home);
-    */
-}
-
-;
 /**
  * Recoge page id by path
+ *
  * @param string $slug
  *
  * @return int
@@ -31,7 +19,7 @@ function get_pageGafa($slug = '')
     $paginaId = 0;
     if ($pagina) {
         $paginaId = $pagina->ID;
-    } elseif (!is_admin()) {
+    } else if (!is_admin()) {
         die('No hay una página: ' . $slug);
     };
 
@@ -40,9 +28,10 @@ function get_pageGafa($slug = '')
 
 /**
  * Devuelve post ID del ultimo post del tipo
+ *
  * @param bool $post_type
  *
- * @return mixed|void
+ * @return mixed
  */
 function get_last_post($post_type = false)
 {

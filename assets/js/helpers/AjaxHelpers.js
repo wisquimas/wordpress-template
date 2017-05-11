@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Cargando from './Cargando'
 
-var AjaxHelpers = {
+const AjaxHelpers = {
     ajax_GF: null,
     plantillaUrl: null,
     init(){
@@ -15,14 +15,14 @@ var AjaxHelpers = {
      * @constructor
      */
     AjaxEnRecipiente: function do_proceso(data, recipiente, callback) {
-        var AjaxHelper = this;
+        let AjaxHelper = this;
         Cargando.iniciar();
         recipiente = $(recipiente);
         data.ajax_gafa = true;
 
         if (AjaxHelper.ajax_GF) AjaxHelper.ajax_GF.abort();
         AjaxHelper.ajax_GF = $.post(AjaxHelper.plantillaUrl + '/procesos/do_action.php', data).done(function (d) {
-            var info = JSON.parse(d);
+            let info = JSON.parse(d);
             if (!info || !info.ok) {
                 alert(info.mensaje);
                 return;
@@ -42,13 +42,13 @@ var AjaxHelpers = {
      * @constructor
      */
     RequestAjax: function (data, callback, proceso) {
-        var AjaxHelper = this;
+        let AjaxHelper = this;
         Cargando.iniciar();
         data.ajax_gafa = true;
 
         if (AjaxHelper.ajax_GF) AjaxHelper.ajax_GF.abort();
         AjaxHelper.ajax_GF = $.post(AjaxHelper.plantillaUrl + '/procesos/do_action.php', data).done(function (d) {
-            var info = JSON.parse(d);
+            let info = JSON.parse(d);
             if (!info || !info.ok) {
                 alert(info.mensaje);
                 return null;
@@ -62,6 +62,25 @@ var AjaxHelpers = {
                     callback(info.data);
                 }
             }
+        }).always(function () {
+            Cargando.borrar();
+        });
+    },
+    AppendHtml: function (recipiente, data, callback, proceso) {
+        let AjaxHelper = this;
+        Cargando.iniciar();
+        recipiente = $(recipiente);
+        data.ajax_gafa = true;
+
+        AjaxHelper.ajax_GF = $.post(AjaxHelper.plantillaUrl + '/procesos/do_action.php', data).done(function (d) {
+            let info = JSON.parse(d);
+            if (!info || !info.ok) {
+                alert(info.mensaje);
+                return;
+            }
+            recipiente.append(info.data);
+
+            if (callback) callback();
         }).always(function () {
             Cargando.borrar();
         });
