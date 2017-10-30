@@ -1,7 +1,5 @@
 <?php
-// Incluir todos los archivos php de la carpeta actual que comienzen con "class-".
-
-require_once __DIR__ . "/post_object/autoload.php";
+// Incluir todos los archivos php de la carpeta actual
 
 foreach (glob(__DIR__ . DIRECTORY_SEPARATOR . 'abstract' . DIRECTORY_SEPARATOR . "*.php") as $filename) {
     require_once $filename;

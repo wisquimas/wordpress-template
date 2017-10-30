@@ -1,6 +1,6 @@
 <?php
 
-namespace TresCielos;
+namespace Wisquimas;
 
 interface InterfaceModel
 {

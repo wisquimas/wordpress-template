@@ -3,10 +3,10 @@
  * Class GafaObject
  */
 
-namespace TresCielos;
+namespace Wisquimas;
 
 abstract
-class GafaObject implements InterfaceModel
+class WisquimasObject implements InterfaceModel
 {
     /**
      * @var int

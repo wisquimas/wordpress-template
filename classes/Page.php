@@ -2,7 +2,9 @@
 
 namespace TresCielos;
 
-class Page extends GafaObject
+use Wisquimas\WisquimasObject;
+
+class Page extends WisquimasObject
 {
     const PostType = 'page';
 
